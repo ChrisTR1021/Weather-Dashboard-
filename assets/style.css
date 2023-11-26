@@ -4,3 +4,30 @@
     box-sizing: border-box;
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
+
+body {
+    background: teal
+}
+
+h1 {
+    color:white;
+    padding: 16px 0;
+    font-size: 1.75rem;
+    text-align: center;
+    background: gray
+}
+
+.container {
+    display: flex;
+    gap: 250px;
+    padding: 30px;
+}
+
+.weather-input input{
+    height: 50px;
+    width: 100%;
+}
+
+.weather-input{
+    width: 550px
+}
