@@ -7,7 +7,7 @@ var cityLocationCoordinates = () => {
     var cityTitle = inputCity.value.trim(); 
     // will return if the cityTitle is empty
     if(!cityTitle) return;
-    var apiUrl = 'http://api.openweathermap.org/geo/1.0/direct?q=${cityTitle}&limit=1&appid=${APIKEY}';
+    var apiUrl = `https://api.openweathermap.org/geo/1.0/direct?q=${cityTitle}&limit=5&appid=${apiKey}`;;
 
 
     fetch(apiUrl).then(res => res.json()).then(data => {
