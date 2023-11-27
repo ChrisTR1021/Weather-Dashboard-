@@ -24,7 +24,18 @@ var getWeatherSpecifics = (cityTitle, lat, lon) => {
     var weatherApiUrl = `https://api.openweathermap.org/data/2.5/forecast/?lat=${lat}&lon=${lon}&appid=${apiKey}`;
 
     fetch(weatherApiUrl).then(res => res.json()).then(data =>{
-        console.log(data);
+
+
+        //allows for a filter to only get one Forecast for the day 
+        var distinctForecastPeriod =[];
+        var fiveDayForecast = data.list.filter(forecast => {
+            var forecastDate = new Date(forecast.dt_txt).getDay();
+            if(!distinctForecastPeriod.includes(forecastDate)) {
+                return distinctForecastPeriod.push(forecastDate);
+            }
+        });
+
+        console.log(fiveDayForecast);
     }).catch(() => {
         alert("error fetching the weather data");
     });
