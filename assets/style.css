@@ -19,15 +19,56 @@ h1 {
 
 .container {
     display: flex;
-    gap: 250px;
+    gap: 350px;
     padding: 30px;
+}
+
+.weather-input button{
+    cursor: pointer;
+    border: none;
+    border-radius: 2px;
+    width: 100%;
+    outline: none;
+    background-color: gray;
+    color: white;
+    
+}
+
+.weather-input{
+    width: 600px
 }
 
 .weather-input input{
     height: 50px;
     width: 100%;
+    padding: 0 25px;
+    border: 3px solid;
+    margin: 15px 0 25px 0;
 }
 
-.weather-input{
-    width: 550px
+.weather-stats{
+    width:100%
+}
+
+.weather-input .location-btn{
+    background:brown
+}
+
+.weather-input .divider{
+    height: 2px;
+    width: 100%;
+    margin: 30px 0;
+    justify-content: center;
+    background-color: black;
+    display: flex;
+    align-items: center;
+}
+
+.weather-input .divider::before{
+    color: black;
+    font-size: 1.18rem;
+    padding: 0 15px;
+    content:"or"
+    
+    
 }
