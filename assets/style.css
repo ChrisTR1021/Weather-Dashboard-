@@ -104,3 +104,58 @@ h1 {
     max-width: 130px;
     margin-top: 10px;
 }
+
+/* forecast card styling */
+.forecast-day h2{
+    font-size: 1.3rem;
+    margin: 20px 0;
+}
+
+.card-pile{
+    gap: 25px;
+    display: flex;
+}
+
+.card-pile .card{
+    background: gray;
+    list-style: none;
+    color: white;
+    padding: 15px 13px;
+    width: calc(95%/5);
+}
+
+.card-pile .card img{
+    max-width: 50px;
+    margin: 5px 0 -10px 0;
+}
+
+
+/* <--responsiveness depending on screen size had to read and watch a few articles and videos to understand media queries and screen sizes */
+@media (max-width: 1400px) {
+    .weather-stats .weather-current{
+        padding: 15px;
+    }
+    .card-pile {
+        flex-wrap: wrap;
+    }
+    .card-pile .card {
+        width: calc(95%/5 - 12px);
+    }
+@media (max-width: 950px) {
+    .weather-input {
+        width: 450px;
+    }
+    .card-pile .card {
+        width: calc(100%/2 - 10px);
+    }
+}
+@media (max-width: 750px) {
+    .container {
+        flex-wrap: wrap;
+        padding: 15px;
+    }
+    .weather-input {
+        width: 100%;
+    }
+}
+}
