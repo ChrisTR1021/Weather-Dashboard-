@@ -1,5 +1,5 @@
-var searchButton = document.querySelector("#search-btn");
-var inputCity = document.querySelector("#input-city");
+var searchButton = document.querySelector("#searchBttn");
+var inputCity = document.querySelector("#city-input");
 
 
 var cityLocationCoordinates = () => {
