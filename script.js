@@ -12,24 +12,22 @@ var cityLocationCoordinates = () => {
     var apiUrl = `https://api.openweathermap.org/geo/1.0/direct?q=${cityTitle}&limit=5&appid=${apiKey}`;
 
     // City coordinates based off (name, longitude and latitude) comes from the API response
-    fetch(apiUrl).then(res => res.json()).then(data => {
-        if(!data.length) return alert("error fetching the coordinates")
-    }).catch(() => {
-        alert("error fetching the coordinates");
+    fetch(apiUrl).then(res=> res.json()).then(data => {
+        if(!data.length) return alert(`no coordinates found for ${cityTitle}`);
         var { name, lat, lon } = data[0];
         getWeatherSpecifics(name, lat, lon);
+    }).catch(() => {
+        alert("error fetching the coordinates");
     });
-
 }
-
 var getWeatherSpecifics = (cityTitle, lat, lon) => {
-    var weatherApiUrl = `https://api.openweathermap.org/data/2.5/forecast/?lat=${lat}&lon=${lon}&appid={apiKey}`;
+    var weatherApiUrl = `https://api.openweathermap.org/data/2.5/forecast/?lat=${lat}&lon=${lon}&appid=${apiKey}`;
 
     fetch(weatherApiUrl).then(res => res.json()).then(data =>{
         console.log(data);
     }).catch(() => {
-        alert("error fetching the coordinates");
+        alert("error fetching the weather data");
     });
-
 }
+
 searchButton.addEventListener("click", cityLocationCoordinates);
