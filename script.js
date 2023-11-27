@@ -1,5 +1,5 @@
-var searchButton = document.querySelector(".search-btn");
-var inputCity = document.querySelector("input-city");
+var searchButton = document.querySelector("#search-btn");
+var inputCity = document.querySelector("#input-city");
 
 
 var cityLocationCoordinates = () => {
@@ -9,4 +9,4 @@ var cityLocationCoordinates = () => {
     if(!cityTitle) return;
     console.log(cityTitle);
 }
-searchButton.addEventListener("click", cityLocationCoordinates)
+searchButton.addEventListener("click", cityLocationCoordinates);
