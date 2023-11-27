@@ -53,7 +53,6 @@ h1 {
     font-size: 1.9rem
 }
 
-
 /* city search bar */
 .weather-input input{
     height: 50px;
@@ -133,7 +132,6 @@ h1 {
     max-width: 50px;
     margin: 5px 0 -10px 0;
 }
-
 
 /* <--responsiveness depending on screen size had to read and watch a few articles and videos to understand media queries and screen sizes */
 @media (max-width: 1400px) {

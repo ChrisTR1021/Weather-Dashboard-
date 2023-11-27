@@ -1,8 +1,7 @@
 var searchButton = document.querySelector("#searchBttn");
 var inputCity = document.querySelector("#city-name");
 var apiKey = "6cb51ee488390e9ab28eca71544422ef";
-var weatherCardspile = document.querySelector("#card-pile")
-
+var weatherCardsPile = document.querySelector("#card-pile")
 
 
 var cityLocationCoordinates = () => {
@@ -26,7 +25,6 @@ var getWeatherSpecifics = (cityTitle, lat, lon) => {
 
     fetch(weatherApiUrl).then(res => res.json()).then(data =>{
 
-
         //allows for a filter to only get one Forecast for the day 
         var distinctForecastPeriod =[];
         var fiveDayForecast = data.list.filter(forecast => {
@@ -38,7 +36,7 @@ var getWeatherSpecifics = (cityTitle, lat, lon) => {
 
         console.log(fiveDayForecast);
         fiveDayForecast.foreach(weatherObject => {
-            weatherCardspile.insertAdjacentHTML("beforeend", createWeatherCard(weatherObject));
+            weatherCardsPile
         });
     }).catch(() => {
         alert("error fetching the weather data");
