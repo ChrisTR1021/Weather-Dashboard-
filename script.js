@@ -1,6 +1,7 @@
 var searchButton = document.querySelector("#searchBttn");
 var inputCity = document.querySelector("#city-name");
 var apiKey = "6cb51ee488390e9ab28eca71544422ef";
+var weatherCardspile = document.querySelector("#card-pile")
 
 
 
@@ -36,9 +37,22 @@ var getWeatherSpecifics = (cityTitle, lat, lon) => {
         });
 
         console.log(fiveDayForecast);
+        fiveDayForecast.foreach(weatherObject => {
+            weatherCardspile.insertAdjacentHTML("beforeend", createWeatherCard(weatherObject));
+        });
     }).catch(() => {
         alert("error fetching the weather data");
     });
+
+    var createWeatherCard = (weatherObject) => {
+        return `<li class="card">
+        <h3>(${weatherObject.dt_txt.split(" ")[0]})</h3>
+        <img src="https://openweathermap.org/img/wn${weatherObject.weather[0].icon}@2x.png" alt= weather icons
+        <h4>Temp: ${(weatherObject.main.temp - 274.13).toFixed(2)}°C</h4>
+        <h4>Wind: ${weatherObject.wind.speed}M/S</h4>
+        <h4>Humidity: ${weatherObject,main.humidity}%</h4>
+      </li>`;
+    }
 }
 
 searchButton.addEventListener("click", cityLocationCoordinates);
