@@ -23,6 +23,7 @@ h1 {
     padding: 30px;
 }
 
+/* search bar button and color */
 .weather-input button{
     cursor: pointer;
     border: none;
@@ -38,6 +39,22 @@ h1 {
     width: 600px
 }
 
+.weather-current{
+    background: gray;
+    color: white;
+    width: 75%;
+    padding: 10px 60px 10px 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* title of weather current section */
+.weather-current h2{
+    font-size: 1.9rem
+}
+
+
+/* city search bar */
 .weather-input input{
     height: 50px;
     width: 100%;
@@ -50,25 +67,40 @@ h1 {
     width:100%
 }
 
+/* location button */
 .weather-input .location-btn{
     background:brown
 }
 
+/* <--sets divder line between buttons with or comment--> */
 .weather-input .divider{
     height: 2px;
     width: 100%;
     margin: 30px 0;
-    justify-content: center;
     background-color: black;
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 
 .weather-input .divider::before{
+    content: "or";
     color: black;
     font-size: 1.18rem;
     padding: 0 15px;
-    content:"or"
-    
-    
+    background-color: teal;
+}
+
+.weather-stats h4{
+    margin-top: 12px;
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+.weather-current h4{
+    font-size: 0.91rem;
+}
+.weather-current .icon{
+    max-width: 130px;
+    margin-top: 10px;
 }
