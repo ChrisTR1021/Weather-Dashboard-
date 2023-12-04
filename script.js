@@ -1,11 +1,11 @@
-var searchButton = document.querySelector(".searchBttn");
-var inputCity = document.querySelector(".city-name");
+var searchButton = document.querySelector("#searchBttn");
+var inputCity = document.querySelector("#city-name");
 var apiKey = "6cb51ee488390e9ab28eca71544422ef";
 var weatherCurrent = document.querySelector(".weatherCurrent");
 var weatherCardsPile = document.querySelector(".card-pile");
 
 
-var cityLocationCoordinates = () => {
+var getcityLocationCoordinates = () => {
     // user can enter in designated city and extra space will be removed 
     var cityTitle = inputCity.value.trim(); 
     // will return if the cityTitle is empty
@@ -58,4 +58,4 @@ var getWeatherSpecifics = (cityTitle, lat, lon) => {
 }
 
 
-searchButton.addEventListener("click", getCityLocationCoordinates);
+searchButton.addEventListener("click", getcityLocationCoordinates);
