@@ -1,7 +1,8 @@
-var searchButton = document.querySelector("#searchBttn");
-var inputCity = document.querySelector("#city-name");
+var searchButton = document.querySelector(".searchBttn");
+var inputCity = document.querySelector(".city-name");
 var apiKey = "6cb51ee488390e9ab28eca71544422ef";
-var weatherCardsPile = document.querySelector("#card-pile")
+var weatherCurrent = document.querySelector(".weatherCurrent");
+var weatherCardsPile = document.querySelector(".card-pile");
 
 
 var cityLocationCoordinates = () => {
@@ -34,9 +35,12 @@ var getWeatherSpecifics = (cityTitle, lat, lon) => {
             }
         });
 
+        inputCity.value = "";
+        weatherCardsPile.innerHTML = "";
+
         console.log(fiveDayForecast);
         fiveDayForecast.foreach(weatherObject => {
-            weatherCardsPile
+            weatherCardsPile.insertAdjacentElement("beforeend", createWeatherCard(weatherObject));
         });
     }).catch(() => {
         alert("error fetching the weather data");
@@ -53,4 +57,4 @@ var getWeatherSpecifics = (cityTitle, lat, lon) => {
     }
 }
 
-searchButton.addEventListener("click", cityLocationCoordinates);
+
