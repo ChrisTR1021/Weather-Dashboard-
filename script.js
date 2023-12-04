@@ -58,3 +58,4 @@ var getWeatherSpecifics = (cityTitle, lat, lon) => {
 }
 
 
+searchButton.addEventListener("click", getCityLocationCoordinates);
