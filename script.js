@@ -35,13 +35,6 @@ var getWeatherSpecifics = (cityTitle, lat, lon) => {
             }
         });
 
-        inputCity.value = "";
-        weatherCardsPile.innerHTML = "";
-
-        console.log(fiveDayForecast);
-        fiveDayForecast.foreach(weatherObject => {
-            weatherCardsPile.insertAdjacentElement("beforeend", createWeatherCard(weatherObject));
-        });
     }).catch(() => {
         alert("error fetching the weather data");
     });
